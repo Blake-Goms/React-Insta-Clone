@@ -1,0 +1,33 @@
+.search-container {
+    margin: 0 auto;
+    border-bottom: 1px solid #3333;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: #ffffff;
+}
+
+.img {
+    height: 40px;
+    width: 40px;
+}
+
+.text {
+    display: flex;
+    padding: 0px 10px;
+}
+
+.search {
+    padding-left: 50px;
+}
+
+
+.right-container {
+    display: flex;
+}
+
+.social {
+    width: 120px;
+}

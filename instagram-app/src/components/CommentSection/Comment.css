@@ -1,0 +1,13 @@
+.comment-container {
+    text-align: left;
+    padding: 4px;
+    margin-left: 10px;
+}
+.user {
+    font-weight: 500;
+    /* font-size: 16px; */
+    padding-right: 10px;
+}
+.textinput {
+    border-top: 1px solid lightgray;
+}
