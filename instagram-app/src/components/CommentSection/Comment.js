@@ -4,9 +4,9 @@ import './Comment.css';
 
 const Comment = props => {
   return (
-    <div className="comment-container">
-    <span className="user">-{props.comment.username}</span>
-    <span className="comment">{props.comment.text}</span>{' '}
+      <div className="comment-container">
+      <span className="user">{props.comment.username}</span>
+      <span className="comment">{props.comment.text}</span>{' '}
     </div>
   );
 };
@@ -14,7 +14,7 @@ const Comment = props => {
 Comment.propTypes = {
   comment: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired
+    username: PropTypes.string.isRequired,
   })
 };
 

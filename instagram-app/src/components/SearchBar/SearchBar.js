@@ -10,15 +10,15 @@ const Search = () => {
         <div className="search-container">
             <div className="image">
                 <img src={camera} alt="instagram icon" className="img"/>
-            </div>
-            <div className="text">
+            {/* </div> */}
+            {/* <div className="text"> */}
                 <p>
                     Instagram
                 </p>
+            </div>
                 <div className="search">
                     <input type="text" placeholder="search" />
                 </div>
-            </div>
             
             <div className="right-container">
                 <div className="social">

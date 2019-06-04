@@ -2,25 +2,29 @@
     margin: 0 auto;
     border-bottom: 1px solid #3333;
     width: 50%;
-    height: 50px;
+    height: 45px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-content: baseline;
     align-items: baseline;
     background: #ffffff;
 }
 
-.img {
+.image {
     height: 40px;
     width: 40px;
+    display: flex;
+    flex-direction: row;
 }
 
-.text {
+p {
     display: flex;
-    padding: 0px 10px;
+    height: 30px;
+    padding-left: 30px;
 }
 
 .search {
-    padding-left: 50px;
 }
 
 
@@ -29,5 +33,11 @@
 }
 
 .social {
-    width: 120px;
+    margin: 0 auto;
+    vertical-align: baseline;
+}
+
+.img {
+    height: 40px;
+    width: 40px;
 }
