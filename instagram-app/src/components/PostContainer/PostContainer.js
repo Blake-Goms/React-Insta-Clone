@@ -1,14 +1,60 @@
-import React from 'react';
-import PostDisplay from './PostDisplay';
-import './Post.css';
+import React, {Component} from 'react';
+import CommentSection from '../CommentSection/CommentSection'
 
-const PostContainer = props => {
-    return (
-        <div className="container">
-            {props.posts.map((p, id) => (
-            <PostDisplay key={id} img={p.imageUrl} post={p} likes={p.likes} />
-            ))}
+class PostContainer extends Component {
+    render() { 
+        return ( 
+            <div className="post-container">
+                {this.props.filteredPosts.length === 0 ? this.props.data.map(post => {
+                    return (
+                        <>
+
+                        <header>
+                            <img src={post.thumbnailUrl} alt="thumbnail"/>
+                            <h3>{post.username}</h3>
+                        </header>
+
+                        <img src={post.imageUrl} alt={post.id}/>
+
+                        <section className="likebar">
+                            {post.likes} likes
+                        </section>
+
+                        <CommentSection 
+                            comments={post.comments}
+                            timestamp={post.timestamp}
+                        />
+
+                        </>
+                    )
+                }) : this.props.filteredPosts.map(post => {
+                    return (
+                        <>
+
+                        <header>
+                            <img src={post.thumbnailUrl} alt="thumbnail"/>
+                            <h3>{post.username}</h3>
+                        </header>
+
+                        <img src={post.imageUrl} alt={post.id}/>
+
+                        <section className="likebar">
+                            {post.likes} likes
+                        </section>
+
+                        <CommentSection 
+                            comments={post.comments}
+                            timestamp={post.timestamp}
+                        />
+
+                        </>
+                    ) }
+                )
+                }
         </div>
-    );
-};
+    )
+}
+}
+
+
 export default PostContainer;
