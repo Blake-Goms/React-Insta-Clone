@@ -1,4 +1,22 @@
 import React, {Component} from 'react';
+import styled, { css } from 'styled-components';
+
+const CommentSectionDiv = styled.div`
+font-weight: 400;
+display: inline-block;
+padding-left: 10px;
+`;
+
+const UserCommentDiv = styled.div`
+font-weight: 400;
+display: inline-block;
+padding-left: 10px;
+`;
+
+const TimeStamp = styled.p`
+color: grey;
+font-size: 12px;
+`;
 
 class CommentSection extends Component {
     state = {
@@ -9,7 +27,7 @@ class CommentSection extends Component {
     addNewComment = e => {
         e.preventDefault();
         const newComment = {
-            username: 'blake',
+            username: 'blakerockzz',
             text: this.state.newComment
         }
 
@@ -27,28 +45,28 @@ class CommentSection extends Component {
 
     render() { 
         return ( 
-            <div className="comment-section">
-
-                {this.state.comments.map(comment => {
-                    return (
-                    <>
-                        <h3>{comment.username}</h3>
-                        <p>{comment.text}</p>
-                    </>
-                    )
-                })}
-
-                <p className="timestamp">{this.props.timestamp}</p>
+            <CommentSectionDiv>
+                <UserCommentDiv>
+                    {this.state.comments.map(comment => {
+                        return (
+                        <>
+                            <h4> {comment.username}: </h4>
+                            <p>{comment.text}</p>
+                        </>
+                        )
+                    })}
+                    </UserCommentDiv>
+                <TimeStamp>{this.props.timestamp}</TimeStamp>
                 <form onSubmit={this.addNewComment}>
-                    <input 
-                    type="text" 
+                    <input
                     name="newComment" 
-                    value={this.state.newComment}
                     onChange={this.changeHandler}
                     placeholder="add a comment..."
+                    type="text" 
+                    value={this.state.newComment}
                 />
                 </form>
-            </div> 
+            </CommentSectionDiv> 
             );
     }
 }

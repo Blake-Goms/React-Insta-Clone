@@ -1,27 +1,36 @@
 import React, {Component} from 'react';
-import camera from '../../assets/camera.png';
-import compass from '../../assets/compass.png';
-import heart from '../../assets/heart.png';
-import person from '../../assets/person.png';
+import styled, { css } from 'styled-components';
 import "./SearchBar.css"
+
+const Bar = styled.div`
+margin: 0 auto;
+border-bottom: 1px solid #3333;
+height: 45px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-content: baseline;
+align-items: baseline;
+`;
+
 
 class SearchBar extends Component {
     render() { 
         return ( 
-            <div className="searchBar">
-                <img src={camera} alt="camera" className="image" />
-                <span>Instagram</span>
+            <Bar>
+                <i class="fab fa-instagram fa-2x"></i>
+                <span> Instagram</span>
                 <input
                     name="search"
-                    onChange={this.props.searchFilter} //called from app,js
-                    placeholder="search..."
+                    onChange={this.props.searchFilter}
+                    placeholder=" Search..."
                     type="text"
                     value={this.props.newSearch}
                 />
-                <img src={compass} alt="compass" className="image"/>
-                <img src={heart}  alt="heart" className="image" />
-                <img src={person}  alt="person" className="image" />
-            </div>
+                <i className="far fa-compass  fa-2x"></i>
+                <i className="fas fa-heartbeat  fa-2x"></i>
+                <i className="fas fa-user-circle  fa-2x"></i>
+            </Bar>
         );
     }
 }

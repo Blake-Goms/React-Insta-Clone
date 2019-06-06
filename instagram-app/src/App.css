@@ -1,8 +1,6 @@
-.App {
-  max-width: 700px;
-  margin: 0 auto;
+.redheart {
+  color: red;
 }
-.SearchBar {
-  margin:0 auto;
-  padding: 20px 0;
+.fa-heart-broken{
+  color: black;
 }

@@ -29,7 +29,7 @@ class PostsPage extends React.Component {
     }
 
     render() {
-        console.log('render',this.state.data); 
+        console.log('render',this.state.data.likes); 
         return ( 
             <div className="App">       
                 <SearchBar 
