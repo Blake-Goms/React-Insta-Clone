@@ -1,43 +1,26 @@
-/* .container {
-    height: 500px;
-    width: 50%;
-    margin: 0 auto;
-  }
-.post-border {
-  border: 1px solid black;
-  margin: 40px 0;
-}
-
-
-.profile-container{
-  display: flex;
-}
-.profile-thumbnail {
-  padding: 10px;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-}
-.username {
-  padding-top: 20px;
-}
-
-.post-image {
+.PostContainer {
+  margin-top: 20px;    
+  border: 1px solid lightgrey;
+  border-radius: 5px;  
   width: 100%;
 }
 
-.interaction {
+.headerBar {
+  margin-bottom: 10px;
+  padding: 10px;
   display: flex;
-  flex-direction: row;
-  padding-left: 8px;
 }
-.interaction-img {
-  justify-content: baseline;
-  width: 40px;
-  height: 40px;
+.UserThumbnail {
+  border-radius: 50%;
+  width: 10%;
+  height: 10%;
 }
-.spanlikes {
-  text-align: left;
+.Username {
   padding-left: 15px;
-  font-weight: 500;
-} */
+}
+
+
+
+.PostImage{
+  width: 100%;
+}

@@ -1,0 +1,15 @@
+.searchBar {
+    margin: 0 auto;
+    border-bottom: 1px solid #3333;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: baseline;
+    align-items: baseline;
+    background: #ffffff;
+}
+.image {
+    height: 40px;
+    width: 40px;
+}

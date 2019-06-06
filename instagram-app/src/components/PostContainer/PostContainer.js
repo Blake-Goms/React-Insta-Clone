@@ -1,42 +1,42 @@
 import React, {Component} from 'react';
+import heart from '../../assets/heart.png';
+import chat from '../../assets/chat.png';
 import CommentSection from '../CommentSection/CommentSection'
+import './PostContainer.css'
 
 class PostContainer extends Component {
     render() { 
         return ( 
-            <div className="post-container">
+            <>
                 {this.props.filteredPosts.length === 0 ? this.props.data.map(post => {
                     return (
-                        <>
+                        <div className="PostContainer">                        
+                            <header className="headerBar">
+                                <img src={post.thumbnailUrl} alt="thumbnail" className="UserThumbnail"/>
+                                <h3 className="Username">{post.username}</h3>
+                            </header>
 
-                        <header>
-                            <img src={post.thumbnailUrl} alt="thumbnail"/>
-                            <h3>{post.username}</h3>
-                        </header>
+                            <img src={post.imageUrl} alt={post.id} className="PostImage"/>
 
-                        <img src={post.imageUrl} alt={post.id}/>
+                            <section className="likebar">
+                                {post.likes} likes
+                            </section>
 
-                        <section className="likebar">
-                            {post.likes} likes
-                        </section>
-
-                        <CommentSection 
-                            comments={post.comments}
-                            timestamp={post.timestamp}
-                        />
-
-                        </>
+                            <CommentSection 
+                                comments={post.comments}
+                                timestamp={post.timestamp}
+                            />
+                        </div>
                     )
                 }) : this.props.filteredPosts.map(post => {
                     return (
-                        <>
-
-                        <header>
-                            <img src={post.thumbnailUrl} alt="thumbnail"/>
-                            <h3>{post.username}</h3>
+                        <div className="PostContainer">                        
+                        <header className="headerBar">
+                            <img src={post.thumbnailUrl} alt="thumbnail" className="UserThumbnail"/>
+                            <h3 className="Username">{post.username}</h3>
                         </header>
 
-                        <img src={post.imageUrl} alt={post.id}/>
+                        <img src={post.imageUrl} alt={post.id} className="PostImage"/>
 
                         <section className="likebar">
                             {post.likes} likes
@@ -46,12 +46,11 @@ class PostContainer extends Component {
                             comments={post.comments}
                             timestamp={post.timestamp}
                         />
-
-                        </>
+                    </div>
                     ) }
                 )
                 }
-        </div>
+        </>
     )
 }
 }

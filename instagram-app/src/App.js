@@ -1,43 +1,20 @@
 import React from 'react';
-import SearchBar from './components/SearchBar/SearchBar'
-import PostContainer from './components/PostContainer/PostContainer'
-import dummyData from './dummy-data'
-
 import './App.css';
+import PostsPage from './components/PostContainer/PostsPage';
+import withAuthenticate from './authentication/withAuthentication';
+import LoginPage from './components/Login/LoginPage';
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(LoginPage);
 
 class App extends React.Component {
-  state = { 
-    data: [],
-    filteredPosts: []
-  };
-
-  changeHandler = e => {
-    this.setState({
-        [e.target.name]: e.target.value
-    })
-  }
-
-  componentDidMount(){
-    this.setState({data: dummyData})
-  }
-
-  searchFilter = e => {
-    const filtered = this.state.data.filter(post => post.username.toLowerCase().includes(e.target.value.toLowerCase()) ||
-    post.likes.toString().includes(e.target.value.toString()))
-    this.setState({ filteredPosts: filtered})
+  constructor(props){
+    super(props);
+    
   }
 
   render() {
-    console.log('render',this.state.data); 
-    return ( 
-      <div className="App">
-        <SearchBar 
-          newSearch={this.state.search}
-          searchFilter={this.searchFilter}
-        />
-
-        <PostContainer data={this.state.data} filteredPosts={this.state.filteredPosts} searchFilter={this.searchFilter} />
-    </div>
+    return (
+      <ComponentFromWithAuthenticate />
     );
   }
 }
